@@ -3,7 +3,7 @@ import { Lightbulb, Zap, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="w-full min-h-screen bg-hero px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden">
+    <section className="w-full min-h-[calc(100vh-4rem)] bg-hero px-8 md:px-16 flex items-center justify-center overflow-hidden">
       <div className="w-full max-w-[1280px] flex flex-col items-center gap-20">
         <div className="w-full max-w-3xl flex flex-col items-center gap-8">
           {/* Feature badges */}

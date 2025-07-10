@@ -3,10 +3,12 @@ import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
-    <>
-      <Navbar />
+    <div className="w-full min-h-screen bg-hero">
+      <div className="relative h-16 px-4 sm:px-6 lg:px-8">
+        <Navbar />
+      </div>
       <HeroSection />
-    </>
+    </div>
   );
 };
 

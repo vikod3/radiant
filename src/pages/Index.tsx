@@ -1,7 +1,13 @@
 import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
-  return <HeroSection />;
+  return (
+    <>
+      <Navbar />
+      <HeroSection />
+    </>
+  );
 };
 
 export default Index;

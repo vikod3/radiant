@@ -18,7 +18,7 @@ const HeroSection = () => {
       
       {/* Color Overlay */}
       <div 
-        className="absolute inset-0 w-full h-full -z-10"
+        className="absolute inset-0 w-full h-full z-0"
         style={{
           backgroundColor: '#D9D9D9',
           mixBlendMode: 'hue'

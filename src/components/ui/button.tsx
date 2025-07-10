@@ -20,7 +20,6 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-[10px] h-[49px] px-4 font-normal text-base shadow-sm",
         "hero-secondary": "bg-hero-secondary-bg text-hero-foreground hover:bg-hero-secondary-bg/80 border border-hero-secondary-border rounded-[10px] h-[49px] px-4 font-normal text-base backdrop-blur-md",
-        "navbar-cta": "h-[48.9px] px-4 py-[10px] text-black font-geist font-normal text-base leading-[27.2px] rounded-[10px] border-2 border-white",
       },
       size: {
         default: "h-10 px-4 py-2",

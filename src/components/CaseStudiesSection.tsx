@@ -1,24 +1,51 @@
-import { ChevronLeft, ChevronRight, Target, Zap, TrendingUp, Database } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, Target, Zap, TrendingUp, Database, Users, Clock, Shield, CheckCircle } from "lucide-react";
 
 const CaseStudiesSection = () => {
-  const stats = [
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
     {
-      icon: Target,
-      text: "3x More Deals"
+      quote: "AI-driven forecasting cut inventory waste by 40% for TrailForge",
+      description: "ScaleByte's sales team struggled with follow-up delays. Our AI sales assistant automated outreach, lead scoring, and CRM updates—resulting in faster responses and more closed deals.",
+      stats: [
+        { icon: Target, text: "3x More Deals" },
+        { icon: Zap, text: "40% Faster Responses" },
+        { icon: TrendingUp, text: "95% Lead Accuracy" },
+        { icon: Database, text: "CRM Fully Synced" }
+      ]
     },
     {
-      icon: Zap,
-      text: "40% Faster Responses"
+      quote: "Customer support efficiency increased by 60% with automated AI responses",
+      description: "TechFlow's support team was overwhelmed with tickets. Our AI chatbot handled 80% of routine inquiries, allowing agents to focus on complex issues and improve customer satisfaction.",
+      stats: [
+        { icon: Users, text: "80% Auto-Resolved" },
+        { icon: Clock, text: "60% Faster Support" },
+        { icon: Shield, text: "99% Uptime" },
+        { icon: CheckCircle, text: "95% Satisfaction" }
+      ]
     },
     {
-      icon: TrendingUp,
-      text: "95% Lead Accuracy"
-    },
-    {
-      icon: Database,
-      text: "CRM Fully Synced"
+      quote: "Marketing ROI improved by 250% through intelligent campaign optimization",
+      description: "GrowthCorp struggled with ad spend efficiency. Our AI marketing assistant optimized campaigns in real-time, targeting the right audiences and maximizing conversion rates.",
+      stats: [
+        { icon: TrendingUp, text: "250% ROI Boost" },
+        { icon: Target, text: "85% Better Targeting" },
+        { icon: Zap, text: "Real-time Optimization" },
+        { icon: Database, text: "Full Attribution" }
+      ]
     }
   ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const currentSlideData = slides[currentSlide];
 
   return (
     <section className="w-full py-12 lg:py-16 px-4 bg-[#050505]">
@@ -59,19 +86,25 @@ const CaseStudiesSection = () => {
                 <div className="flex flex-col gap-8">
                   <div className="flex flex-col gap-5">
                     <blockquote className="text-hero-foreground text-2xl lg:text-3xl font-normal leading-tight">
-                      "AI-driven forecasting cut inventory waste by 40% for TrailForge"
+                      "{currentSlideData.quote}"
                     </blockquote>
                     <p className="text-hero-muted text-base font-normal leading-relaxed">
-                      ScaleByte's sales team struggled with follow-up delays. Our AI sales assistant automated outreach, lead scoring, and CRM updates—resulting in faster responses and more closed deals.
+                      {currentSlideData.description}
                     </p>
                   </div>
                   
                   {/* Navigation Arrows */}
                   <div className="flex gap-2">
-                    <button className="p-3 bg-hero-secondary-bg/10 hover:bg-hero-secondary-bg/20 rounded-xl transition-colors duration-200">
+                    <button 
+                      onClick={prevSlide}
+                      className="p-3 bg-hero-secondary-bg/10 hover:bg-hero-secondary-bg/20 rounded-xl transition-colors duration-200"
+                    >
                       <ChevronLeft className="w-6 h-6 text-hero-foreground" />
                     </button>
-                    <button className="p-3 bg-hero-foreground hover:bg-hero-foreground/90 rounded-xl transition-colors duration-200">
+                    <button 
+                      onClick={nextSlide}
+                      className="p-3 bg-hero-foreground hover:bg-hero-foreground/90 rounded-xl transition-colors duration-200"
+                    >
                       <ChevronRight className="w-6 h-6 text-background" />
                     </button>
                   </div>
@@ -79,7 +112,7 @@ const CaseStudiesSection = () => {
 
                 {/* Stats Section */}
                 <div className="flex flex-col gap-6">
-                  {stats.map((stat, index) => (
+                  {currentSlideData.stats.map((stat, index) => (
                     <div key={index} className="flex items-center gap-6">
                       <div className="w-6 h-6 flex-shrink-0">
                         <stat.icon className="w-6 h-6 text-hero-foreground" />

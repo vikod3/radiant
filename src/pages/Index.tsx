@@ -7,6 +7,7 @@ import FeatureSection3 from "@/components/FeatureSection3";
 import JourneySection from "@/components/JourneySection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import CTASection from "@/components/CTASection";
+import { Footer } from "@/components/ui/footer-section";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <JourneySection />
       <CaseStudiesSection />
       <CTASection />
+      <Footer />
     </>
   );
 };

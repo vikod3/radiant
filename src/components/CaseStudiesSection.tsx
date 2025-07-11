@@ -68,7 +68,7 @@ const CaseStudiesSection = () => {
               <div className="relative w-full aspect-square lg:h-[577px] lg:aspect-auto overflow-hidden rounded-[30px]">
                 {/* Background Image */}
                 <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1440&h=810&fit=crop&crop=center" 
+                  src="/lovable-uploads/9b72fac8-5af1-41de-9a1e-b196856ba36f.png" 
                   alt="Business dashboard"
                   className="w-full h-full object-cover transform rotate-[10deg] scale-110"
                 />

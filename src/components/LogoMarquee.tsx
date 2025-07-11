@@ -89,7 +89,7 @@ export function LogoMarquee() {
   const arr = [Logos.tailwindcss, Logos.framer, Logos.nextjs, Logos.aws]
 
   return (
-    <section className="w-full py-16" style={{ backgroundColor: '#050505' }}>
+    <section className="w-full pb-16 pt-0" style={{ backgroundColor: '#050505' }}>
       <Marquee>
         {arr.map((Logo, index) => (
           <div

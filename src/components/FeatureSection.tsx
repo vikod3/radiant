@@ -32,7 +32,7 @@ const FeatureSection = () => {
               </div>
 
               {/* Image Container - Mobile Only */}
-              <div className="flex-1 max-w-2xl lg:hidden order-2">
+              <div className="flex-1 max-w-2xl lg:hidden order-2 my-8">
                 <div className="relative w-full aspect-square overflow-hidden rounded-[30px]">
                   {/* Background Image */}
                   <img 
@@ -70,7 +70,7 @@ const FeatureSection = () => {
           </div>
 
           {/* Right Image Container - Desktop Only */}
-          <div className="hidden lg:block flex-1 max-w-2xl">
+          <div className="hidden lg:block flex-1 max-w-2xl my-8">
             <div className="relative w-full aspect-square lg:h-[577px] lg:aspect-auto overflow-hidden rounded-[30px]">
               {/* Background Image */}
               <img 

@@ -61,7 +61,7 @@ const FeatureSection = () => {
               <img 
                 src="/lovable-uploads/f85acb58-198d-4595-ba4f-4de5cbdaeeb5.png" 
                 alt="Dashboard preview"
-                className="w-full h-full object-cover"
+                className="w-full aspect-square lg:w-full lg:h-full lg:aspect-auto object-cover"
               />
               
               {/* Overlay Card */}

@@ -49,14 +49,14 @@ const ValuesSection = () => {
           </div>
 
           {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {values.map((value, index) => (
               <div key={index} className="p-10 rounded-xl border border-hero-secondary-border bg-gradient-to-br from-hero-secondary-bg to-transparent backdrop-blur-sm">
                 <div className="flex flex-col gap-6">
                   {/* Icon Container */}
                   <div className="flex flex-col gap-6">
-                    <div className="p-4 rounded-2xl border border-hero-secondary-border bg-gradient-to-br from-hero-foreground to-hero-secondary-bg w-fit">
-                      <value.icon className="w-12 h-12 text-hero" />
+                    <div className="p-4 rounded-2xl border border-white/10 bg-gradient-to-br from-white to-[#131315] w-fit">
+                      <value.icon className="w-12 h-12 text-white" />
                     </div>
                     <h3 className="text-hero-foreground text-2xl font-normal leading-tight">
                       {value.title}

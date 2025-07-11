@@ -16,18 +16,18 @@ const FeatureSection3 = () => {
                     <Settings className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
-                    Integrated with
+                    Ultra HD Quality
                   </span>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
-                  Empowering change through technology
+                  Creating content at stunning quality
                 </h2>
 
                 {/* Description */}
                 <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
-                  Many Web3 platforms are complex and have a steep learning curve, encouraging new users.
+                  Professional 4K recording delivers crystal-clear videos for exceptional user experience.
                 </p>
               </div>
 
@@ -44,7 +44,7 @@ const FeatureSection3 = () => {
                   {/* Overlay Card */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg p-[50px]" style={{backgroundColor: 'rgba(11, 11, 12, 0.77)'}}>
                     <img 
-                      src="/lovable-uploads/acbf981c-beb3-4647-8552-42e3c549de20.png" 
+                      src="/lovable-uploads/e9c2b759-be4c-4182-8c00-fd5e50a55690.png" 
                       alt="Dashboard overlay"
                       className="w-full h-full object-contain"
                     />
@@ -59,7 +59,7 @@ const FeatureSection3 = () => {
                     <Bot className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    Internal Task Bots
+                    4K Video Recording
                   </span>
                 </div>
 
@@ -68,7 +68,7 @@ const FeatureSection3 = () => {
                     <Settings className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    100+ Automations
+                    Ultra HD Streaming
                   </span>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const FeatureSection3 = () => {
               {/* Overlay Card */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] lg:w-[496px] lg:h-[465px] backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg p-[50px]" style={{backgroundColor: 'rgba(11, 11, 12, 0.77)'}}>
                 <img 
-                  src="/lovable-uploads/acbf981c-beb3-4647-8552-42e3c549de20.png" 
+                  src="/lovable-uploads/e9c2b759-be4c-4182-8c00-fd5e50a55690.png" 
                   alt="Dashboard overlay"
                   className="w-full h-full object-contain"
                 />

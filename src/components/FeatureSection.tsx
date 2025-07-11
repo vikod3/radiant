@@ -4,58 +4,32 @@ const FeatureSection = () => {
   return (
     <section className="w-full py-20 px-4 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-20">
-          {/* Left Content */}
-          <div className="flex-1 max-w-2xl">
-            <div className="space-y-20">
-              {/* Header Section */}
-              <div className="space-y-5">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-3 p-4 bg-hero-badge-bg border border-hero-badge-border rounded-2xl backdrop-blur-md">
-                  <div className="w-6 h-6 relative">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
-                  </div>
-                  <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
-                    Integrated with
-                  </span>
-                </div>
-
-                {/* Main Heading */}
-                <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
-                  Empowering change through technology
-                </h2>
-
-                {/* Description */}
-                <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
-                  Many Web3 platforms are complex and have a steep learning curve, encouraging new users.
-                </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-20">
+          {/* Header Section */}
+          <div className="order-1 lg:order-1 space-y-5">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-3 p-4 bg-hero-badge-bg border border-hero-badge-border rounded-2xl backdrop-blur-md">
+              <div className="w-6 h-6 relative">
+                <Settings className="w-6 h-6 text-hero-foreground" />
               </div>
-
-              {/* Features List */}
-              <div className="space-y-6 max-w-md">
-                <div className="flex items-center gap-6">
-                  <div className="w-6 h-6 flex-shrink-0">
-                    <Bot className="w-6 h-6 text-hero-foreground" />
-                  </div>
-                  <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    Internal Task Bots
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-6">
-                  <div className="w-6 h-6 flex-shrink-0">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
-                  </div>
-                  <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    100+ Automations
-                  </span>
-                </div>
-              </div>
+              <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
+                Integrated with
+              </span>
             </div>
+
+            {/* Main Heading */}
+            <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
+              Empowering change through technology
+            </h2>
+
+            {/* Description */}
+            <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
+              Many Web3 platforms are complex and have a steep learning curve, encouraging new users.
+            </p>
           </div>
 
-          {/* Right Image Container */}
-          <div className="flex-1 max-w-2xl">
+          {/* Image Container */}
+          <div className="order-2 lg:order-3 flex-1 max-w-2xl lg:row-span-2">
             <div className="relative w-full aspect-square lg:h-[577px] lg:aspect-auto overflow-hidden rounded-[30px]">
               {/* Background Image */}
               <img 
@@ -66,6 +40,27 @@ const FeatureSection = () => {
               
               {/* Overlay Card */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] lg:w-[496px] lg:h-[465px] bg-hero-secondary-bg/80 backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg"></div>
+            </div>
+          </div>
+
+          {/* Features List */}
+          <div className="order-3 lg:order-2 space-y-6 max-w-md">
+            <div className="flex items-center gap-6">
+              <div className="w-6 h-6 flex-shrink-0">
+                <Bot className="w-6 h-6 text-hero-foreground" />
+              </div>
+              <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
+                Internal Task Bots
+              </span>
+            </div>
+
+            <div className="flex items-center gap-6">
+              <div className="w-6 h-6 flex-shrink-0">
+                <Settings className="w-6 h-6 text-hero-foreground" />
+              </div>
+              <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
+                100+ Automations
+              </span>
             </div>
           </div>
         </div>

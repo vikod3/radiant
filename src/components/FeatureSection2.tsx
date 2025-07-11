@@ -36,7 +36,7 @@ const FeatureSection2 = () => {
                 <div className="relative w-full aspect-square overflow-hidden rounded-[30px]">
                   {/* Background Image */}
                   <img 
-                    src="/lovable-uploads/f85acb58-198d-4595-ba4f-4de5cbdaeeb5.png" 
+                    src="/lovable-uploads/1906ba74-dcef-444d-b278-272e00657770.png" 
                     alt="Dashboard preview"
                     className="w-full h-full object-cover"
                   />
@@ -80,7 +80,7 @@ const FeatureSection2 = () => {
             <div className="relative w-full aspect-square lg:h-[577px] lg:aspect-auto overflow-hidden rounded-[30px]">
               {/* Background Image */}
               <img 
-                src="/lovable-uploads/f85acb58-198d-4595-ba4f-4de5cbdaeeb5.png" 
+                src="/lovable-uploads/1906ba74-dcef-444d-b278-272e00657770.png" 
                 alt="Dashboard preview"
                 className="w-full h-full object-cover"
               />

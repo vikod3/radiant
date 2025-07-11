@@ -81,47 +81,77 @@ const CaseStudiesSection = () => {
 
             {/* Content Container */}
             <div className="flex-1 max-w-2xl">
-              <div className="flex flex-col gap-12 lg:gap-20">
-                {/* Testimonial Section */}
-                <div className="flex flex-col gap-8">
-                  <div className="flex flex-col gap-5">
-                    <blockquote className="text-hero-foreground text-2xl lg:text-3xl font-normal leading-tight">
-                      "{currentSlideData.quote}"
-                    </blockquote>
-                    <p className="text-hero-muted text-base font-normal leading-relaxed">
-                      {currentSlideData.description}
-                    </p>
-                  </div>
-                  
-                  {/* Navigation Arrows */}
-                  <div className="flex gap-2">
-                    <button 
-                      onClick={prevSlide}
-                      className="p-3 bg-hero-secondary-bg/10 hover:bg-hero-secondary-bg/20 rounded-xl transition-colors duration-200"
-                    >
-                      <ChevronLeft className="w-6 h-6 text-hero-foreground" />
-                    </button>
-                    <button 
-                      onClick={nextSlide}
-                      className="p-3 bg-hero-foreground hover:bg-hero-foreground/90 rounded-xl transition-colors duration-200"
-                    >
-                      <ChevronRight className="w-6 h-6 text-background" />
-                    </button>
-                  </div>
-                </div>
+              <div className="relative overflow-hidden">
+                {/* Slides Container */}
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {slides.map((slide, index) => (
+                    <div key={index} className="w-full flex-shrink-0">
+                      <div className="flex flex-col gap-12 lg:gap-20">
+                        {/* Testimonial Section */}
+                        <div className="flex flex-col gap-8">
+                          <div className="flex flex-col gap-5">
+                            <blockquote className="text-hero-foreground text-2xl lg:text-3xl font-normal leading-tight">
+                              "{slide.quote}"
+                            </blockquote>
+                            <p className="text-hero-muted text-base font-normal leading-relaxed">
+                              {slide.description}
+                            </p>
+                          </div>
+                          
+                          {/* Navigation Arrows - Only show on first slide */}
+                          {index === currentSlide && (
+                            <div className="flex gap-2">
+                              <button 
+                                onClick={prevSlide}
+                                className="p-3 bg-hero-secondary-bg/10 hover:bg-hero-secondary-bg/20 rounded-xl transition-colors duration-200"
+                              >
+                                <ChevronLeft className="w-6 h-6 text-hero-foreground" />
+                              </button>
+                              <button 
+                                onClick={nextSlide}
+                                className="p-3 bg-hero-foreground hover:bg-hero-foreground/90 rounded-xl transition-colors duration-200"
+                              >
+                                <ChevronRight className="w-6 h-6 text-background" />
+                              </button>
+                            </div>
+                          )}
+                        </div>
 
-                {/* Stats Section */}
-                <div className="flex flex-col gap-6">
-                  {currentSlideData.stats.map((stat, index) => (
-                    <div key={index} className="flex items-center gap-6">
-                      <div className="w-6 h-6 flex-shrink-0">
-                        <stat.icon className="w-6 h-6 text-hero-foreground" />
+                        {/* Stats Section */}
+                        <div className="flex flex-col gap-6">
+                          {slide.stats.map((stat, statIndex) => (
+                            <div key={statIndex} className="flex items-center gap-6">
+                              <div className="w-6 h-6 flex-shrink-0">
+                                <stat.icon className="w-6 h-6 text-hero-foreground" />
+                              </div>
+                              <span className="text-hero-muted text-base font-normal leading-relaxed">
+                                {stat.text}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <span className="text-hero-muted text-base font-normal leading-relaxed">
-                        {stat.text}
-                      </span>
                     </div>
                   ))}
+                </div>
+                
+                {/* Navigation Arrows - Fixed Position */}
+                <div className="absolute top-8 left-0 flex gap-2">
+                  <button 
+                    onClick={prevSlide}
+                    className="p-3 bg-hero-secondary-bg/10 hover:bg-hero-secondary-bg/20 rounded-xl transition-colors duration-200"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-hero-foreground" />
+                  </button>
+                  <button 
+                    onClick={nextSlide}
+                    className="p-3 bg-hero-foreground hover:bg-hero-foreground/90 rounded-xl transition-colors duration-200"
+                  >
+                    <ChevronRight className="w-6 h-6 text-background" />
+                  </button>
                 </div>
               </div>
             </div>

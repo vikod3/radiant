@@ -74,7 +74,12 @@ const CaseStudiesSection = () => {
                 />
                 
                 {/* Overlay Card */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] lg:w-[496px] lg:h-[465px] backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg" style={{backgroundColor: 'rgba(11, 11, 12, 0.77)'}}>
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] lg:w-[496px] lg:h-[465px] backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg p-[50px]" style={{backgroundColor: 'rgba(11, 11, 12, 0.77)'}}>
+                  <img 
+                    src="/lovable-uploads/2caba8db-decb-4315-a598-5a7d45243432.png" 
+                    alt="Dashboard interface"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </div>
             </div>

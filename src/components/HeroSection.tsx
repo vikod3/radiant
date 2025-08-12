@@ -8,7 +8,7 @@ const HeroSection = () => {
       top: '-30%',
       objectPosition: 'center bottom'
     }} autoPlay muted loop playsInline controls={false}>
-        <source src="https://res.cloudinary.com/da7s1izqw/video/upload/v1752106173/Cw9D8nOGuMDx0eVn02OhggPWXg_kesp06.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dqd4dvem7/video/upload/v1754974239/Cw9D8nOGuMDx0eVn02OhggPWXg_uls0c7.mp4" type="video/mp4" />
       </video>
       
       {/* Color Overlay */}

@@ -9,7 +9,22 @@ const AboutUs = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="w-full min-h-screen px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden relative bg-[#050505]">
+      <section className="w-full min-h-screen px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden relative">
+        {/* Background Video Layer */}
+        <video className="absolute left-0 right-0 w-full h-full object-cover -z-20" style={{
+          filter: 'saturate(0)',
+          top: '-30%',
+          objectPosition: 'center bottom'
+        }} autoPlay muted loop playsInline controls={false}>
+          <source src="https://res.cloudinary.com/dqd4dvem7/video/upload/v1754974239/Cw9D8nOGuMDx0eVn02OhggPWXg_uls0c7.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Color Overlay */}
+        <div className="absolute inset-0 w-full h-full z-0" style={{
+          backgroundColor: '#D9D9D9',
+          mixBlendMode: 'multiply',
+          opacity: 0.7
+        }} />
         <div className="w-full max-w-[1280px] flex flex-col items-center gap-20 relative z-10 pt-[120px]">
           <div className="w-full max-w-4xl flex flex-col items-center gap-8">
             {/* Badge */}

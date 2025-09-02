@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
     { name: "Features", href: "#features" },
     { name: "Solutions", href: "#solutions" },
     { name: "Pricing", href: "#pricing" },
-    { name: "About", href: "#about" },
+    { name: "About", href: "/about" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -23,24 +24,36 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img 
-              src="/lovable-uploads/25b3039d-5f98-460a-9606-1510946f155d.png" 
-              alt="Logo" 
-              className="h-8 w-auto brightness-0 invert"
-            />
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/25b3039d-5f98-460a-9606-1510946f155d.png" 
+                alt="Logo" 
+                className="h-8 w-auto brightness-0 invert"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-hero-muted hover:text-hero-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-hero-muted hover:text-hero-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-hero-muted hover:text-hero-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -76,14 +89,25 @@ const Navbar = () => {
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-2 pb-3 space-y-1 border-t border-hero-badge-border">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-hero-muted hover:text-hero-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-hero-muted hover:text-hero-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-hero-muted hover:text-hero-foreground block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
               <div className="flex flex-col space-y-2 px-3 pt-4">
                 <Button 

@@ -1,23 +1,56 @@
 import { Button } from "@/components/ui/button";
 import { Lightbulb, Zap, Sparkles } from "lucide-react";
+import { useEffect, useRef } from "react";
+import Hls from "hls.js";
+
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const videoSrc = "https://customer-cbeadsgr09pnsezs.cloudflarestream.com/74cb72d57c6a6d6d7807693d02e6707b/manifest/video.m3u8";
+
+    // Check if browser natively supports HLS (Safari)
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
+    } else if (Hls.isSupported()) {
+      // Use hls.js for other browsers
+      const hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+      
+      return () => {
+        hls.destroy();
+      };
+    }
+  }, []);
+
   return <section className="w-full min-h-screen px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden relative">
       {/* Background Video Layer */}
-      <video className="absolute left-0 right-0 w-full h-full object-cover -z-20" style={{
-      filter: 'saturate(0)',
-      top: '-30%',
-      objectPosition: 'center bottom'
-    }} autoPlay muted loop playsInline controls={false}>
-        <source src="https://res.cloudinary.com/dqd4dvem7/video/upload/v1754974239/Cw9D8nOGuMDx0eVn02OhggPWXg_uls0c7.mp4" type="video/mp4" />
-      </video>
+      <div className="absolute inset-0 z-[1]">
+        <video 
+          ref={videoRef}
+          className="w-full h-full object-cover" 
+          style={{
+            filter: 'saturate(0)',
+            objectPosition: 'center bottom'
+          }} 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        />
+      </div>
       
       {/* Color Overlay */}
-      <div className="absolute inset-0 w-full h-full z-0" style={{
+      <div className="absolute inset-0 w-full h-full z-[2]" style={{
       backgroundColor: '#D9D9D9',
       mixBlendMode: 'multiply',
       opacity: 0.7
     }} />
-      <div className="w-full max-w-[1280px] flex flex-col items-center gap-20 relative z-10 pt-[120px]">
+      <div className="w-full max-w-[1280px] flex flex-col items-center gap-20 relative z-[3] pt-[120px]">
         <div className="w-full max-w-3xl flex flex-col items-center gap-8">
           {/* Feature badges */}
           <div className="flex flex-wrap items-center justify-center gap-3">
